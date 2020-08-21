@@ -75,7 +75,10 @@ class RenderEngine {
 				}).addClass("selected");
 			});
 		});
-		streamKeys.filter(each => each.startsWith("txt_")).forEach(() => {
+		streamKeys.filter(each => each.startsWith("txt_")).forEach((each) => {
+			const id = each;
+			const parentQuery = each.parentQuery_ || this.parentQuery();
+			$(parentQuery).append(`<textarea id=${id} class="TextArea"></textarea>`);
 		});
 	}
 

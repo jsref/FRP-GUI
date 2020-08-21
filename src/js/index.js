@@ -1,12 +1,18 @@
 console.log(1111);
 
 const river = new River();
-river.ipt_Result.touch();
-river.btn_Hello.onValue(() => river.ipt_Result.push("Hello"));
-river.btn_Goodbye.onValue(() => river.ipt_Result.push("Goodbye"));
 
-river.ul_Numbers.push(["one", "two", "three"]);
-river.selection_ul_Numbers.onValue((v) => river.ipt_Result.push(v));
+function add () {
+	const oldList = river.ul_TodoList.value();
+	oldList.push("<h1>[ ] newTodoItem</h1>");
+	river.ul_TodoList.push(oldList);
+}
+
+river.btn_Add.onValue(add);
+
+river.ul_TodoList.push(["one", "two", "three"]);
+river.selection_ul_TodoList.onValue((v) => alert(v));
+
 
 console.log(2222);
 

@@ -2,10 +2,10 @@
     background-color: orange;
 }
 
-#ul_Numbers li:hover {
+#ul_TodoList li:hover {
     background-color: orange;
 }
 
-#ul_Numbers li.selected {
+#ul_TodoList li.selected {
     background-color: green;
 }
